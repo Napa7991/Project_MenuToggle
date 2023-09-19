@@ -1,0 +1,89 @@
+/* first step is to make basic arrangement */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+/* before that make us ul and anchor tag style none */
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+/* now lets make our header go down the page */
+.header{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+/* now lets work on our container */
+.container{
+    max-width: 989px;
+    /* background-color: red; */
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+
+/* now lets give some space to our anchor tag */
+.grid{
+    display: grid;
+    gap:1.5rem;
+}
+
+/* before that lets make our nav_list  */
+.nav__list{
+    grid-template-columns: repeat(3,1fr);
+}
+
+/* now lets adjust the nav__menu at screen size less thatn 767px */
+@media screen and (max-width:767px){
+    .nav__menu{
+        width: 100%;
+        position: fixed;
+
+        /* we are doing this show that we can use it when close button is clicked and app button is clicked */
+        bottom:-100%;
+
+
+        left:0;
+        padding:2rem 1.5rem 4rem;
+        /* to make alex and app icon disapper we gonna use background color on nav__menu */
+        background-color: white;
+
+        /* adding show to make it look like box */
+        box-shadow: 0 -2px 4px rgba(0,0,0,.15);
+        border-radius: 0.5rem;
+        transition: .4s;
+
+    }
+}
+
+/* now to make close button to our right side */
+.nav__toggle{
+    cursor: pointer;
+    font-size: 1rem;
+}
+.nav__close{
+
+    /* we are using absolute because its gonna stay its in positon relative to its parent div */
+    position: absolute;
+    font-size: 1.5rem;
+    right:20px;
+    bottom:20px;
+    cursor: pointer;
+}
+
+.show-menu{
+    bottom:0;
+}
+
